@@ -34,12 +34,10 @@ date: 2020-03-22
 # 다른 패턴과 비교
 
 ## Proxy Pattern vs Adaptor Pattern  
-----
 Adaptor는 wrapped Object에게 다른 인터페이스를 제공하는 역할
 Proxy는 같은 인터페이스와 함께 제공, 
 Decorator는 보강된 인터페이스와 함께 제공(Decorated된)
 
 ## Proxy Pattern vs Decorator Pattern
-----
  둘 다 한 객체가 다른 객체에게 일들을 위임하는 유사한 구조지만, 의도에서 차이가 있다. 
 프록시는 그 자신의 서비스 객체의 라이프 사이클을 관리하는데 반해, 데코레이터의 구성은 클라이언트에 의해 관리된다.
