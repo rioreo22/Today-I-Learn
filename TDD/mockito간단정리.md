@@ -80,8 +80,10 @@ verify(Mock_객체, 호출횟수지정_메소드).Mock_객체의_메소드;
 만일 Stub으로 만들어진 Mock 객체 메소드의 호출 순서까지 검증하고 싶다면 `InOrder` 클래스를 이용
 
 
-## Mockito의 특징적인 기능
-1. void 메소드를 Stub으로 만들기
+# Mockito의 특징적인 기능
+## 1. void 메소드를 Stub으로 만들기
+
+
 void 메소드는 특별히 리턴할 내용이 없기 때문이 Stub으로 만들 일이 거의 없다. 근데 예외 발생하도록 하려면, stub해야함.
 
 ```
@@ -89,13 +91,15 @@ doThrow(예외).when(Mock_객체).voidMethod();
 ```
 
 
-2. 콜백으로 Stub 만들기: `thenAnswer`
+## 2. 콜백으로 Stub 만들기: `thenAnswer`
 
 Mock은 보통 하드코딩된 값만 돌려주도록 만들 수 있다. 그런데 특정 Mock 메소드에
 대해 실제 로직을 구현하고자 할 때 콜백(CallBack) 기법을 사용한다. 그런데 TDD 자
 체에서 권장하는 방식은 아니라는 걸 알아두자
 
-3. 실제 객체를 Stub으로 만들기: Spy
+## 3. 실제 객체를 Stub으로 만들기: Spy
+
+
 지금까지 인터페이스를 Mock으로 만들어왔다. 그런데 Mockito는 실 객체도 Mock으
 로 만들 수 있다. Mockito의 강력한 기능 중 하나인데, 너무 강력해서 오히려 문제가
 될 수도 있는 기능이다. 부분 Mocking이라고 불리는 방법으로 서드파티(3rd Party) 제
@@ -103,7 +107,9 @@ Mock은 보통 하드코딩된 값만 돌려주도록 만들 수 있다. 그런�
 권장한다. Mockito의 저자는 spy 기능을 쓰게 된다면, 그건 이미 뭔가 잘못된 코드를
 건드리고 있다는 증거라고 이야기하고 있다
 
-4. 똑똑한 NULL 처리: Smart Nulls
+## 4. 똑똑한 NULL 처리: Smart Nulls
+
+
 Stub으로 만들지 않은 기본형 외의 값을 리턴하는 메소드는 null 값이 찍힌다. 이렇게
 만들어진 Mock 객체들은 종종 NPE(Null Pointer Exception)를 유발한다. 필요에 따
 라, 좀 더 유용한 값이 기본값으로 찍히게 만드는 것이 SMART NULLS라는 방식이다.
@@ -124,17 +130,16 @@ SMART NULLS 규칙
 - 배열은 크기 0인 기본 배열 객체로 만들어준다.
 - Collection 계열은 빈 Collection 객체로 만든다.
 
-5.  행위 주도 개발(BDD) 스타일 지원
+## 5.  행위 주도 개발(BDD) 스타일 지원
 
 Mockito는 //given //when //then 식의 행위 주도 개발(Behavior-Driven
 Development, BDD) 스타일로 테스트 케이스 작성할 수 있게 지원해준다. BDD 스타
-일을 사용하려면 Mockito 클래스 대신 BDDMockito를 static import 한다. 다음은 해
-당 예다.
+일을 사용하려면 Mockito 클래스 대신 BDDMockito를 static import 한다.
 
 
 
 # 마무리
-- ## Mock은 Mock일 뿐이다
+## Mock은 Mock일 뿐이다
 
 Mock 객체를 사용해 아무리 잘 작동하는 코드를 만들었다 하더라도, 실제 객체(real
 object)가 끼어들어 왔을 때도 잘 동작하리라는 보장은 없다. Mock 객체는 실제 객
