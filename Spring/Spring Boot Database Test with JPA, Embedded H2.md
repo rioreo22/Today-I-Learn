@@ -1,4 +1,4 @@
-# Spring Boot Database Test with JPA, 테스트용 Embedded H2 간단 세팅
+# Spring Boot Database Test with JPA, 테스트용 Embedded H2 세팅
 
 ## 1. 라이브러리 추가
 pom.xml
