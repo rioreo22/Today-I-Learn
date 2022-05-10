@@ -5,8 +5,6 @@ application.yml
 ```yml
 spring:
   jpa:
-    hibernate:
-      ddl-auto: create
     properties:
       hibernate:
         format_sql: true
@@ -33,8 +31,6 @@ application.yml
 ``` yml
 spring:
   jpa:
-    hibernate:
-      ddl-auto: create
     properties:
       hibernate:
         show_sql: true # System.out으로 SQL문 출력 - 비추
